@@ -1,0 +1,490 @@
+/* About the slider : I got the code from https://designmodo.com/responsive-slider/
+I want to state that I did more than just copy & paste the css code.
+I looked at each line to understand how it works and added a description to remind me the line's role in case I need to tweak them in the future.
+Each time I couldn't figure out the purpose of a line I deleted it. I didn't want to just copy & paste code I don't understand (and which doesn't seem to make any difference if removed, the slider still works and doesn't have visual glitches) just because the author of the tutorial said "you need that".
+So, disclaimer : the slider may not be perfect but I feel better doing it this way, without "cheating"
+by implementing code I don't really understand.
+
+Performances pictures are from pixabay.com and publicdomainpictures.net. */
+
+
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Ewert');
+
+/* BODY */
+
+body {
+    margin: auto;
+    background-color: #F7EED7;
+}
+
+
+/* RESPONSIVE */
+
+@media all and (max-width: 1200px) {
+    nav ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+    }
+    .performances_row {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .performance {
+        width: 100% !important;
+        /* won't overwrite default without !important */
+    }
+    nav ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 240px !important;
+        padding: 5px 20px 5px 20px !important;
+        margin: 0 auto 19px auto !important;
+    }
+    footer {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .footer_category {
+        width: 90% !important;
+        margin: 10px auto 10px auto !important;
+    }
+}
+
+
+/* HEADER */
+
+header {
+    background-image: url("http://imgur.com/dkO7aqH.jpg");
+    color: #F7D06C;
+    box-shadow: 10px 0px 10px 3px black;
+    margin: 10px 0px 40px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+header h1 {
+    text-align: center;
+    font-family: 'Ewert', cursive;
+    font-size: 5.5em;
+    font-weight: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border-radius: 10px;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0px 20px 0px 20px;
+    margin: 0 auto 19px auto;
+    box-sizing: border-box;
+}
+
+nav li {
+    font-family: 'Ewert', cursive;
+    font-size: 2.5em;
+}
+
+nav a:hover {
+    text-shadow: 2px 2px 5px #F7D06C;
+}
+
+nav a {
+    text-decoration: none;
+    color: #F7D06C;
+    margin: 0 20px 0 20px;
+}
+
+
+/* CIRCUS STORY */
+
+#circus_story {
+    margin: auto;
+    color: #5E2A55;
+    border: 5px double #5E2A55;
+    border-radius: 10px;
+    background-color: #CCBD99;
+    width: 90%;
+    padding: 30px;
+    text-align: center;
+    /* allows centering of h1 */
+    box-sizing: border-box;
+    /* prevents padding from increasing container size, which would be a visual problem
+    here (circus_story and performances_showcase wouldn't have the same width */
+    box-shadow: 0 3px 5px 0 black;
+}
+
+#circus_story h1 {
+    display: inline-block;
+    /* allows text to dictate container size (so background and border don't take more space than needed)  */
+    text-align: center;
+    margin: 0 auto 20px auto;
+    font-family: 'Ewert', cursive;
+    font-size: 2em;
+    color: #F7D06C;
+    border-radius: 5px;
+    background-image: url("http://imgur.com/mIIid1T.jpg");
+    padding: 5px 10px 5px 10px;
+    font-weight: 100;
+}
+
+#circus_story p {
+    font-family: 'Roboto', cursive;
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+
+/* CURRENT SHOW */
+
+#performances_showcase {
+    color: #5E2A55;
+    margin: 40px auto auto auto;
+    width: 90%;
+}
+
+#performances_flexbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: auto;
+}
+
+.performances_row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.performance {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 30px;
+    width: 49%;
+    border-radius: 10px;
+    border: 5px double #5E2A55;
+    background-color: #CCBD99;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 5px 0 black;
+}
+
+.performance h1 {
+    color: #F7D06C;
+    display: inline-block;
+    /* allows text to dictate container size (so background and border don't take more space than needed)  */
+    text-align: center;
+    margin: 0 auto 20px auto;
+    font-family: 'Ewert', cursive;
+    font-size: 2em;
+    border-radius: 5px;
+    background-image: url("http://imgur.com/mIIid1T.jpg");
+    padding: 5px 10px 5px 10px;
+    font-weight: 100;
+}
+
+.performance p {
+    text-align: justify;
+    font-family: 'Roboto', cursive;
+    font-size: 1.1em;
+}
+
+
+/* PERFORMANCES SLIDERS */
+
+
+/* Misc */
+
+a {
+    outline: none;
+    /* removes dotted outline of already clicked links */
+}
+
+.slides, .flex-control-nav, .flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* centers the slider and hides the bullet point of each slide */
+}
+
+.flexslider .slides img {
+    width: 100%;
+    height: 100%;
+    /* limits images' size to slider's size so they don't overflow if bigger than the slider */
+}
+
+.slides::after {
+    /* clearfix to reset float property of slider's elements. Don't know where the float is coming from, probably a default setting in flexslider code */
+    content: '';
+    clear: both;
+}
+
+.slides li {
+    /* slides are hidden until the slider is loaded, avoiding full size image pop in while the slider is loading */
+    display: none;
+}
+
+
+/* Theme Styles */
+
+.flex-container {
+    width: 100%;
+    position: relative;
+    /* allows nav buttons to display correctly */
+    margin: auto;
+    /* centers the slider */
+}
+
+.flexslider {
+    /* slider border */
+    width: 100%;
+    padding: 5px 5px 1px 5px;
+    background: #ffffff;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+
+/* Direction Nav */
+
+.flex-direction-nav a {
+    /* adds custom direction nav instead of "previous" and "next" links (default nav items of the flexslider library) */
+    position: absolute;
+    margin: -17px 0 0 0;
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    cursor: pointer;
+    text-indent: -9999px;
+    /* hide "previous" and "next" link text */
+    background-color: #CEB45C;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(143, 79, 132, 1)), color-stop(100%, rgba(54, 29, 50, 1)));
+    background: -webkit-linear-gradient(90deg, rgba(54, 29, 50, 1) 0%, rgba(143, 79, 132, 1) 100%);
+    background: -ms-linear-gradient(90deg, rgba(54, 29, 50, 1) 0%, rgba(143, 79, 132, 1) 100%);
+    /* gradient from http://angrytools.com/gradient/ */
+}
+
+.flex-direction-nav a::before {
+    /* adds nav arrows without having to add specific tags for them in the html thanks to ::before selector */
+    position: absolute;
+    content: '';
+    width: 9px;
+    height: 13px;
+    top: 11px;
+    left: 11px;
+    background: url("http://i.imgur.com/L07UJ7w.png") no-repeat;
+}
+
+.flex-direction-nav .flex-next {
+    /* right nav button x-axis and shape */
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.flex-direction-nav .flex-prev {
+    /* left nav button x-axis and shape */
+    position: absolute;
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.flex-direction-nav .flex-next::before {
+    /* right arrow position tweaking, needed because both arrows are a single 18px width image */
+    background-position: -9px 0;
+    left: 15px;
+}
+
+
+/* Control Nav */
+
+.flexslider .flex-control-nav {
+    /* slider controls (dots at the bottom) position */
+    position: absolute;
+    width: 100%;
+    bottom: -23px;
+    text-align: center;
+    margin: 0 0 0 -10px;
+}
+
+.flex-control-nav li {
+    /* displays the sliders controls as a row on the same line */
+    display: inline-block;
+}
+
+.flex-control-paging li a {
+    /* idle slider controls' appearance tweaking */
+    display: block;
+    /* allows overwriting of the default slider controls borders' shape (rectangle) */
+    cursor: pointer;
+    text-indent: -9999px;
+    /* hides the slider controls' numbers */
+    width: 12px;
+    height: 12px;
+    /* changes slider controls shape by manipulating their width and height */
+    margin: 0 3px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 2px #733E6A;
+    /* inset turns the shadow into an inner shadow, thus avoiding a visual inscrease in size that would be caused by a normal shadow surrounding the idle slider controls */
+}
+
+.flex-control-paging li a.flex-active {
+    /* active slider control's appearance tweaking */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(143, 79, 132, 1)), color-stop(100%, rgba(54, 29, 50, 1)));
+    background: -webkit-linear-gradient(90deg, rgba(54, 29, 50, 1) 0%, rgba(143, 79, 132, 1) 100%);
+    background: -ms-linear-gradient(90deg, rgba(54, 29, 50, 1) 0%, rgba(143, 79, 132, 1) 100%);
+    box-shadow: none;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-image: url("http://imgur.com/dkO7aqH.jpg");
+    background-position: center 0;
+    color: #F7D06C;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    box-shadow: 10px 0px 10px 3px black;
+    margin: 10px 0px 10px 0px;
+    justify-content: space-around;
+}
+
+.footer_category {
+    margin: 10px 0px 10px 0px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0px 20px 0px 20px;
+    width: 20%;
+    padding-bottom: 10px;
+}
+
+footer h1 {
+    text-align: center;
+    font-family: 'Ewert', cursive;
+    font-size: 2em;
+    font-weight: 100;
+}
+
+footer a, footer p {
+    font-family: 'Roboto', cursive;
+}
+
+footer a {
+    text-decoration: none;
+    color: #F7D06C;
+}
+
+footer a:hover {
+    color: #CCBA82;
+    text-decoration: underline;
+}
+
+#contact p {
+    text-align: justify;
+}
+
+#contact a {
+    display: block;
+    text-align: right;
+}
+
+#newsletter p {
+    text-align: justify;
+}
+
+#newsletter form {
+    text-align: right;
+}
+
+#newsletter input {
+    border-radius: 4px;
+}
+
+#newsletter input[type="submit"] {
+    background-color: #F7D06C;
+    text-shadow: 1px 1px #F7D06C;
+    color: #733E6A;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+#social_media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+#social_media p {
+    text-align: center;
+}
+
+#social_media_logos {
+    text-align: center;
+}
+
+#social_media img {
+    position: relative;
+    /* needed for jquery animation */
+    margin-right: 10px;
+}
+
+#author_mail {
+    position: relative;
+    padding-left: 40px;
+}
+
+#author img {
+    position: absolute;
+    left: 0;
+    top: -10px;
+}
+
+#author_profile {
+    text-align: right;
+}
