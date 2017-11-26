@@ -6,10 +6,7 @@ So, disclaimer : the slider may not be perfect but I feel better doing it this w
 by implementing code I don't really understand.
 
 Performances pictures are from pixabay.com and publicdomainpictures.net. */
-
-
 /* FONTS */
-
 @import url('https://fonts.googleapis.com/css?family=Roboto|Ewert');
 
 /* BODY */
@@ -19,7 +16,6 @@ body {
     background-color: #F7EED7;
 }
 
-
 /* RESPONSIVE */
 
 @media all and (max-width: 1200px) {
@@ -28,16 +24,19 @@ body {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
     }
+
     .performances_row {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
     }
+
     .performance {
         width: 100% !important;
         /* won't overwrite default without !important */
     }
+
     nav ul {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -47,23 +46,24 @@ body {
         padding: 5px 20px 5px 20px !important;
         margin: 0 auto 19px auto !important;
     }
+
     footer {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
     }
+
     .footer_category {
         width: 90% !important;
         margin: 10px auto 10px auto !important;
     }
 }
 
-
 /* HEADER */
 
 header {
-    background-image: url("http://imgur.com/dkO7aqH.jpg");
+    background-image: url("pictures/banner.jpg");
     color: #F7D06C;
     box-shadow: 10px 0px 10px 3px black;
     margin: 10px 0px 40px 0px;
@@ -115,7 +115,6 @@ nav a {
     margin: 0 20px 0 20px;
 }
 
-
 /* CIRCUS STORY */
 
 #circus_story {
@@ -143,7 +142,7 @@ nav a {
     font-size: 2em;
     color: #F7D06C;
     border-radius: 5px;
-    background-image: url("http://imgur.com/mIIid1T.jpg");
+    background-image: url("pictures/banner2.jpg");
     padding: 5px 10px 5px 10px;
     font-weight: 100;
 }
@@ -153,7 +152,6 @@ nav a {
     font-size: 1.1em;
     text-align: justify;
 }
-
 
 /* CURRENT SHOW */
 
@@ -210,7 +208,7 @@ nav a {
     font-family: 'Ewert', cursive;
     font-size: 2em;
     border-radius: 5px;
-    background-image: url("http://imgur.com/mIIid1T.jpg");
+    background-image: url("pictures/banner2.jpg");
     padding: 5px 10px 5px 10px;
     font-weight: 100;
 }
@@ -221,9 +219,7 @@ nav a {
     font-size: 1.1em;
 }
 
-
 /* PERFORMANCES SLIDERS */
-
 
 /* Misc */
 
@@ -245,17 +241,10 @@ a {
     /* limits images' size to slider's size so they don't overflow if bigger than the slider */
 }
 
-.slides::after {
-    /* clearfix to reset float property of slider's elements. Don't know where the float is coming from, probably a default setting in flexslider code */
-    content: '';
-    clear: both;
-}
-
 .slides li {
     /* slides are hidden until the slider is loaded, avoiding full size image pop in while the slider is loading */
     display: none;
 }
-
 
 /* Theme Styles */
 
@@ -275,7 +264,6 @@ a {
     border-radius: 3px;
     box-sizing: border-box;
 }
-
 
 /* Direction Nav */
 
@@ -304,7 +292,7 @@ a {
     height: 13px;
     top: 11px;
     left: 11px;
-    background: url("http://i.imgur.com/L07UJ7w.png") no-repeat;
+    background: url("pictures/arrows.png") no-repeat;
 }
 
 .flex-direction-nav .flex-next {
@@ -326,7 +314,6 @@ a {
     background-position: -9px 0;
     left: 15px;
 }
-
 
 /* Control Nav */
 
@@ -368,11 +355,10 @@ a {
     box-shadow: none;
 }
 
-
 /* FOOTER */
 
 footer {
-    background-image: url("http://imgur.com/dkO7aqH.jpg");
+    background-image: url("pictures/banner.jpg");
     background-position: center 0;
     color: #F7D06C;
     display: -webkit-box;
